@@ -1,0 +1,23 @@
+
+
+.main--header {
+  display: grid;
+  grid-auto-rows: 1fr 1fr 1fr;
+  div{
+    grid-column: 2/3;
+    margin: auto;
+    border: 1px solid blue;
+  }
+  nav{
+    grid-column: 3/4;
+    margin: auto;
+    border: 1px solid blue;
+  }
+}
+
+.logo{
+  width: 300px;
+  img{
+    width: 100%;
+  }
+}
