@@ -1,0 +1,49 @@
+.Home{
+  height: 100vh;
+  background-image: url("./../images/bryggen.png");
+  background-size: cover;
+  width: 100%;
+}
+
+.home--form{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 50px;
+  h1 {
+    margin-top: 200px;
+    color: white;
+  }
+  &__section{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin: auto;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 150px 150px 125px;
+    div input{
+      width: 100%;
+      height: 50px;
+      border:7px solid $color-pink;
+      border-radius: 3px;
+      &::placeholder{
+        padding: 5px;
+      }
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: 800px){
+
+}
+
+
+@media only screen and (min-width: 800px) and (max-width: 1100px){
+
+}
+
+@media only screen and (min-width: 1100px){
+
+}
