@@ -1,0 +1,16 @@
+.form{
+  width:  $main-width;
+  margin-left: $main-margin;
+  color: white;
+  margin-top: 50px;
+   &--item input{
+     height: 30px;
+   }
+   &--item input, &--item textarea{
+    width: 100%;
+    border: 2px solid $color-purple;
+    &:focus{
+      border: 4px solid $color-pink;
+    }
+  }
+}
