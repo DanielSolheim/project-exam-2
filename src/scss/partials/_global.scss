@@ -45,3 +45,15 @@ input::placeholder {
     margin-left: $main-margin;
   }
 }
+
+
+.main--button{
+  background-color: $color-pink;
+  border: none !important;
+  cursor: pointer;
+  &:hover{
+    background-color: black;
+    color: $color-pink;
+    transform: scale(1.1);
+  }
+}

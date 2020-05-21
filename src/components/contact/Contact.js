@@ -40,7 +40,7 @@ export default function Contact(){
         </div>
 
         <div className="form--item form--item__name">
-          <input type="submit"></input>
+          <input className="main--button" type="submit"></input>
         </div>
      </form>
     </div>

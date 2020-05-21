@@ -1,0 +1,22 @@
+.Admin {
+  color: white;
+}
+
+
+.admin--menu{
+  width: $main-width;
+  margin-left: $main-margin;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  &__link{
+    padding: 10px;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+   &:hover{
+      background-color: $color-pink;
+   }
+  }
+}
