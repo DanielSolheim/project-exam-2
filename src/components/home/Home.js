@@ -39,9 +39,10 @@ export default function Home (){
           return false
        });
        setFilteredEstablishments(filteredArray);
+       console.log(e)
      }
 
-     
+
 
 
   //fetching the api
@@ -94,11 +95,11 @@ export default function Home (){
                   <input type="date"  placeholder="checkout" name="check-inn" />
                  </div>
 
-               <Link to="/establishments">
-                 <div className="home--form__item home--form__item__submit">
-                  <input  type="submit"  name="submit" />
-                 </div>
-               </Link>
+                   <Link to="/establishments">
+                     <div className="home--form__item home--form__item__submit">
+                      <input  type="submit"  name="submit" />
+                     </div>
+                   </Link>
 
 
 
