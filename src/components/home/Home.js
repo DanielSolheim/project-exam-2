@@ -2,6 +2,11 @@ import React from "react";
 import {useState, useEffect} from 'react';
 import {BASE_URL} from './../constants/api.js';
 import Search from './Search';
+import DropDown from './DropDown';
+import { Link } from 'react-router-dom';
+
+
+
 
 export default function Home (){
 
@@ -11,30 +16,35 @@ export default function Home (){
   const [filteredEstablishments, setFilteredEstablishments] = useState([]);
 
 
-  //search Function
-  var filterGames = function(e){
-    const searchValue = e.target.value.toLowerCase();
-
-    //filtering establishments
-    const filteredArray = establishments.filter(function(establishment){
-       const lowerCaseName = establishment.establishmentName.toLowerCase();
-       //return only when games match
-       if (lowerCaseName.match(searchValue)){
-
-         return true
-       }
-       return false
-    });
-    setFilteredEstablishments(filteredArray);
-  }
+ //states for search dropdown
+  const [showResults, setShowResults] = React.useState(false)
+  let onClick = () => setShowResults(true)
 
 
 
 
 
+     //search Function
+     var filterGames = function(e){
+       const searchValue = e.target.value.toLowerCase();
+
+       //filtering establishments
+       const filteredArray = establishments.filter(function(establishment){
+          const lowerCaseName = establishment.establishmentName.toLowerCase();
+
+          //return only when establishment names match
+          if (lowerCaseName.match(searchValue)){
+            return true
+          }
+          return false
+       });
+       setFilteredEstablishments(filteredArray);
+     }
+
+     
 
 
-
+  //fetching the api
    useEffect(function(){
      fetch(BASE_URL)
        .then(function(response){
@@ -49,7 +59,7 @@ export default function Home (){
        })
    },[])
 
-   console.log(establishments);
+
 
 
 
@@ -63,37 +73,42 @@ export default function Home (){
                <h1 className="home--heading"> Search for places to stay in Bergen </h1>
 
                <form className="home--form__section">
-                 <div className="home--form__item home--form__item__search">
+                 <div  onKeyDown={onClick}  className="home--form__item home--form__item__search">
                    <Search handleSearch={filterGames}/>
 
+                   <div className="dropdown--container__outer ">
                    {filteredEstablishments.map(function(establishment){
                     return (
-                    <div className="search-container">
-                      <div className="search-dropdown__item search" key={establishment.id}>
-                          <img src={establishment.imageUrl} alt={establishment.establishmentName}/>
-                          <div  className="search-dropdown">  {establishment.establishmentName} </div>
-                      </div>
-                    </div>
+                        <div  key={establishment.id} className="dropdown--container__inner">
+                          { showResults ? <DropDown establishment={establishment} /> : null }
+                        </div>
                     )
                    })}
-
-
+                   </div>
                  </div>
+
                  <div className="home--form__item home--form__item__checkinn">
                   <input type="date"  placeholder="checkinn" name="check-out" />
                  </div>
                  <div className="home--form__item home--form__item__checkout">
                   <input type="date"  placeholder="checkout" name="check-inn" />
                  </div>
+
+               <Link to="/establishments">
                  <div className="home--form__item home--form__item__submit">
-                  <input type="submit"  name="submit" />
+                  <input  type="submit"  name="submit" />
                  </div>
+               </Link>
+
+
+
                </form>
+
           </section>
       </div>
 
 
 
     </div>
-  )
-}
+  );
+};

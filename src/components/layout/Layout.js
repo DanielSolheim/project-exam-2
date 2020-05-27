@@ -9,9 +9,9 @@ import {
 
 import Admin from "./../admin/Admin.js";
 import AdminLogin from "./../admin/AdminLogin.js";
-
 import Home from "./../home/Home.js";
 import Contact from "./../contact/Contact.js";
+import SearchResult from './../home/SearchResult';
 
 
 export default function Layout() {
@@ -35,7 +35,8 @@ export default function Layout() {
              <Route path="/" exact component={Home}/>
              <Route path="/contact" component={Contact} />
              <Route path="/adminLogin" component={AdminLogin} />
-             <Route path="/admin" component={Admin} /> 
+             <Route path="/admin" component={Admin} />
+             <Route path="/establishments" component={SearchResult} /> 
       </Switch>
       </div>
      </div>
