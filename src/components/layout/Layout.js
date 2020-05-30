@@ -12,6 +12,7 @@ import AdminLogin from "./../admin/AdminLogin.js";
 import Home from "./../home/Home.js";
 import Contact from "./../contact/Contact.js";
 import SearchResult from './../home/SearchResult';
+import HotelSpecific from './../home/HotelSpecific';
 
 
 export default function Layout() {
@@ -36,9 +37,14 @@ export default function Layout() {
              <Route path="/contact" component={Contact} />
              <Route path="/adminLogin" component={AdminLogin} />
              <Route path="/admin" component={Admin} />
-             <Route path="/establishments" component={SearchResult} /> 
-      </Switch>
+             <Route path="/establishments" component={SearchResult} />
+             <Route path="/establishment/:id" component={HotelSpecific} />
+       </Switch>
       </div>
+      <footer>
+           <div> <i>@Daniel Solheim </i> </div>
+      </footer>
+
      </div>
     </Router>
    );

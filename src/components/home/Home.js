@@ -24,7 +24,7 @@ export default function Home (){
 
 
 
-     //search Function
+     //search Function and Save the contents to local storage
      var filterGames = function(e){
        const searchValue = e.target.value.toLowerCase();
 
@@ -33,13 +33,16 @@ export default function Home (){
           const lowerCaseName = establishment.establishmentName.toLowerCase();
 
           //return only when establishment names match
-          if (lowerCaseName.match(searchValue)){
+          if(e.target.value === ""){
+            return false
+          }
+          else if (lowerCaseName.match(searchValue)){
             return true
           }
           return false
        });
        setFilteredEstablishments(filteredArray);
-       console.log(e)
+
      }
 
 
@@ -62,6 +65,18 @@ export default function Home (){
 
 
 
+  // save search to local storage
+   const [value, setValue] = React.useState(
+      localStorage.getItem('myValueInLocalStorage') || ''
+    );
+
+    useEffect(() => {
+      localStorage.clear();
+      localStorage.setItem('myValueInLocalStorage', value);
+    },[value]);
+
+    const onChange = event => setValue(event.target.value);
+
 
 
 
@@ -74,17 +89,17 @@ export default function Home (){
                <h1 className="home--heading"> Search for places to stay in Bergen </h1>
 
                <form className="home--form__section">
-                 <div  onKeyDown={onClick}  className="home--form__item home--form__item__search">
+                 <div  onKeyDown={onClick}  value={value} onChange={onChange} className="home--form__item home--form__item__search">
                    <Search handleSearch={filterGames}/>
 
                    <div className="dropdown--container__outer ">
-                   {filteredEstablishments.map(function(establishment){
-                    return (
-                        <div  key={establishment.id} className="dropdown--container__inner">
-                          { showResults ? <DropDown establishment={establishment} /> : null }
-                        </div>
-                    )
-                   })}
+                     {filteredEstablishments.map(function(establishment){
+                        return (
+                            <div  key={establishment.id} className="dropdown--container__inner">
+                              { showResults ? <DropDown establishment={establishment} /> : null }
+                            </div>
+                        )
+                     })}
                    </div>
                  </div>
 
@@ -97,14 +112,13 @@ export default function Home (){
 
                    <Link to="/establishments">
                      <div className="home--form__item home--form__item__submit">
-                      <input  type="submit"  name="submit" />
+                      <input  type="submit"  name="submit" value="Search"/>
                      </div>
                    </Link>
 
 
 
                </form>
-
           </section>
       </div>
 
