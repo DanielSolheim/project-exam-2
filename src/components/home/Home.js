@@ -105,6 +105,7 @@ export default function Home (){
 
                  <div className="home--form__item home--form__item__checkinn">
                   <input type="date"  placeholder="checkinn" name="check-out" />
+                  Hello
                  </div>
                  <div className="home--form__item home--form__item__checkout">
                   <input type="date"  placeholder="checkout" name="check-inn" />
