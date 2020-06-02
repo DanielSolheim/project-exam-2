@@ -13,7 +13,7 @@ const schema = yup.object().shape({
 
 export default function Contact(){
 
-  const{ register, errors } = useForm({
+  const{ errors } = useForm({
     validationSchema: schema
   })
 

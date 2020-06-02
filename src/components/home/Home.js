@@ -24,8 +24,9 @@ export default function Home (){
 
 
 
+
      //search Function and Save the contents to local storage
-     var filterGames = function(e){
+     var filterEstablishments = function(e){
        const searchValue = e.target.value.toLowerCase();
 
        //filtering establishments
@@ -90,7 +91,7 @@ export default function Home (){
 
                <form className="home--form__section">
                  <div  onKeyDown={onClick}  value={value} onChange={onChange} className="home--form__item home--form__item__search">
-                   <Search handleSearch={filterGames}/>
+                   <Search handleSearch={filterEstablishments}/>
 
                    <div className="dropdown--container__outer ">
                      {filteredEstablishments.map(function(establishment){
@@ -105,7 +106,7 @@ export default function Home (){
 
                  <div className="home--form__item home--form__item__checkinn">
                   <input type="date"  placeholder="checkinn" name="check-out" />
-                  
+
                  </div>
                  <div className="home--form__item home--form__item__checkout">
                   <input type="date"  placeholder="checkout" name="check-inn" />
