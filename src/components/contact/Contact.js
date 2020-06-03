@@ -29,7 +29,7 @@ export default function Contact(){
 
   return (
     <div className="Contact">
-     <form className="form" method="POST" action="http://localhost/hotel-api/contact-success.php" onSubmit={handleSubmit(onSubmit)}   >
+     <form className="form" method="POST" action="http://dansol.no/hotel-api/contact-success.php" onSubmit={handleSubmit(onSubmit)}   >
 
         <div className="form--item form--item__name">
           <label htmlFor="clientName">Full name</label>
