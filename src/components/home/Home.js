@@ -43,7 +43,6 @@ export default function Home (){
           return false
        });
        setFilteredEstablishments(filteredArray);
-
      }
 
 
@@ -112,10 +111,8 @@ export default function Home (){
                   <input type="date"  placeholder="checkout" name="check-inn" />
                  </div>
 
-                   <Link to="/establishments">
-                     <div className="home--form__item home--form__item__submit">
+                   <Link to="/establishments" className="home--form__item home--form__item__submit">    
                       <input  type="submit"  name="submit" value="Search"/>
-                     </div>
                    </Link>
 
 

@@ -23,11 +23,13 @@ const [messages, setMessages] = useState([]);
 
 
   return(
-    <div className="Message">
+    <div className="Messages">
     {messages.map(function(message){
      return (
-         <div   className="dropdown--container__inner">
-           <p> {message.clientName} </p>
+         <div className="message">
+           <p className="message--name"> {message.clientName} </p>
+           <p className="message--message"> {message.message} </p>
+           <p className="message--email"> {message.email} </p>
          </div>
      )
     })}

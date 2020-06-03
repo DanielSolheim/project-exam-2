@@ -1,9 +1,28 @@
 .establishment--item{
+  &__selfCatering{
+    display: grid;
+    grid-template-columns: 100px 40px 30px 40px 30px auto;
+    height: 30px;
+    color: black;
+    background-color: white;
+    border: 2px solid $color-purple;
+    p{
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      margin-left: 5px;
+    }
+    input{
+      color: black;
+    }
+
+
+
+  }
   input{
     width: 100%;
     border: 2px solid $color-purple;
     padding: 5px;
-    margin-top: 10px;
     &:focus{
       border: 4px solid $color-pink;
     }
@@ -33,9 +52,16 @@
   .new--establishment{
     width: $main-width;
     margin-left: $main-margin;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
   }
 
-  .establishment--item{
-
+  .establishment--item__submit{
+    grid-column: 1/3;
+    text-align: center;
   }
+
+
 }

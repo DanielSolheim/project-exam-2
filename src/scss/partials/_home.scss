@@ -1,8 +1,21 @@
 .Home{
   height: 100vh;
-  background-image: url("./../images/bryggen.png");
   background-size: cover;
   width: 100%;
+}
+
+@media only screen and (max-width: 800px){
+  .Home{
+    background-image: url("./../images/bryggen-optimize-mobile.jpg");
+  }
+}
+
+
+
+@media only screen and (min-width: 800px){
+  .Home{
+    background-image: url("./../images/bryggen.png");
+  }
 }
 
 .home--form{
@@ -15,7 +28,7 @@
   &__section{
     display: grid;
     width: 100%;
-    div input{
+    .home--form__item input{
       width: 100%;
       height: 50px;
       border:7px solid $color-pink;
@@ -91,7 +104,8 @@
 .dropdown--container__outer{
   height: auto;
   max-height:  400px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
 
 }
@@ -127,11 +141,6 @@
     grid-row: 2/3;
   }
 }
-
-
-
-
-
 
 
 

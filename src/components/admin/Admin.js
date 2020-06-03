@@ -6,7 +6,7 @@ import {
     NavLink,
 } from "react-router-dom";
 
-import Message from "./Message.js";
+import Messages from "./Messages.js";
 import Enqueries from "./Enqueries.js";
 import AddEstablishment from "./AddEstablishment.js";
 
@@ -24,9 +24,9 @@ export default function Admin(){
           <Switch>
              <Route path="/admin/" exact component={Enqueries}/>
              <Route path="/admin/add-establishment" component={AddEstablishment} />
-             <Route path="/admin/messages" component={Message} />
+             <Route path="/admin/messages" component={Messages} />
           </Switch>
-          
+
        </div>
      </Router>
   );

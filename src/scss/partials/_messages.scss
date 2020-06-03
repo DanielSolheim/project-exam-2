@@ -1,0 +1,53 @@
+
+
+.message{
+  display: grid;
+  grid-template:
+  'name email'
+  'message message';
+   margin-top: 10px;
+   border-bottom: 1px solid $color-pink;
+  &--name{
+    grid-area: name;
+    font-size: 20px;
+    height: 15px;
+    margin: 5px;
+  }
+  &--email{
+    grid-area: email;
+    color: #E5E5E5;
+    margin: 5px;
+    text-align: right;
+  }
+  &--message{
+    grid-area: message;
+    color: #E5E5E5;
+    height: 20px;
+    margin: 5px;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 800px){
+  .Messages{
+    margin-left: $main-margin-mobile;
+    width: $main-width-mobile;
+  }
+}
+
+
+@media only screen and (min-width: 800px) and (max-width: 1100px){
+  .Messages{
+    margin-left: $main-margin-pad;
+    width: $main-width-pad;
+  }
+}
+
+@media only screen and (min-width: 1100px){
+  .Messages{
+    margin-left: $main-margin;
+    width: $main-width;
+  }
+}
