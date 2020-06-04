@@ -1,6 +1,6 @@
 import React from "react";
 import {useState, useEffect} from 'react';
-import {BASE_URL} from './../constants/api.js';
+import {BASE_URLL} from './../constants/api.js';
 import Search from './Search';
 import DropDown from './DropDown';
 import { Link } from 'react-router-dom';
@@ -50,7 +50,7 @@ export default function Home (){
 
   //fetching the api
    useEffect(function(){
-     fetch(BASE_URL)
+     fetch(BASE_URLL)
        .then(function(response){
          return response.json();
        })
@@ -111,7 +111,7 @@ export default function Home (){
                   <input type="date"  placeholder="checkout" name="check-inn" />
                  </div>
 
-                   <Link to="/establishments" className="home--form__item home--form__item__submit">    
+                   <Link to="/establishments" className="home--form__item home--form__item__submit">
                       <input  type="submit"  name="submit" value="Search"/>
                    </Link>
 

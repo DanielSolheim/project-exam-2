@@ -52,41 +52,72 @@
 
     .makeEnquiry{
        display: grid;
-       grid-area: enquiry;
+       display: -ms-grid;
+       grid-template-columns: 1fr;
+       -ms-grid-columns: 1fr;
+       grid-template-rows: 20px 20px 20px 20px 20px 20px 20px 20px;
+       -ms-grid-rows: 20px 20px 20px 20px 20px 20px 20px 20px;
        padding: 0 $main-margin-mobile;
-       grid-template:
-         'header'
-         'establishment'
-         'name'
-         'email'
-         'adults'
-         'children'
-         'dates'
-         'submit';
+
        &--header{
-         grid-area: header;
+         grid-column: 1/2;
+         grid-row: 1/2;
+         -ms-grid-row: 1;
+         -ms-grid-row-span: 1;
+         -ms-grid-column: 1;
+         -ms-grid-column-span: 1;
        }
        &--establishment{
-         grid-area: establishment;
+         grid-column: 1/2;
+         grid-row: 2/3;
+         -ms-grid-row: 1;
+         -ms-grid-row-span: 1;
+         -ms-grid-column: 1;
+         -ms-grid-column-span: 1;
        }
        &--name{
-         grid-area: name;
+         grid-column: 1/2;
+         grid-row: 3/4;
+         -ms-grid-row: 1;
+         -ms-grid-row-span: 1;
+         -ms-grid-column: 1;
+         -ms-grid-column-span: 1;
        }
        &--email{
-         grid-area: email;
+         grid-column: 1/2;
+         grid-row: 4/5;
+         -ms-grid-row: 1;
+         -ms-grid-row-span: 1;
+         -ms-grid-column: 1;
+         -ms-grid-column-span: 1;
        }
        &--adults{
-         grid-area: children;
+         grid-column: 1/2;
+         grid-row: 5/6;
+         -ms-grid-row: 1;
+         -ms-grid-row-span: 1;
+         -ms-grid-column: 1;
+         -ms-grid-column-span: 1;
        }
        &--dates{
-         grid-area: dates;
+         grid-column: 1/2;
+         grid-row: 7/8;
+         -ms-grid-row: 1;
+         -ms-grid-row-span: 1;
+         -ms-grid-column: 1;
+         -ms-grid-column-span: 1;
          display: grid;
          grid-template-columns: 1fr 1fr;
          input{
            width: 100%;
          }
        &--submit{
-         grid-area: submit;
+         grid-column: 1/2;
+         grid-row: 8/9;
+         -ms-grid-row: 1;
+         -ms-grid-row-span: 1;
+         -ms-grid-column: 1;
+         -ms-grid-column-span: 1;
        }
       }
     }
@@ -215,7 +246,7 @@
       margin-left: 10px;
 
       &__price{
-       
+
       }
       &__maxGuest{
 

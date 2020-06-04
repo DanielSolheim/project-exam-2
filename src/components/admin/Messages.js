@@ -1,5 +1,5 @@
 import React from 'react';
-import {CONTACT_URL} from './../constants/api';
+import {CONTACT_URLL} from './../constants/api';
 import {useState, useEffect} from 'react';
 
 export default function Message(){
@@ -9,7 +9,7 @@ const [messages, setMessages] = useState([]);
 
   //fetching the api
    useEffect(function(){
-     fetch(CONTACT_URL)
+     fetch(CONTACT_URLL)
        .then(function(response){
          return response.json();
        })

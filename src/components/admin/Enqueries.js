@@ -1,5 +1,5 @@
 import React from 'react';
-import {ENQUIRIES_URL} from './../constants/api';
+import {ENQUIRIES_URLL} from './../constants/api';
 import {useState, useEffect} from 'react';
 
 export default function Enqueries(){
@@ -8,7 +8,7 @@ export default function Enqueries(){
 
   //fetching the api
    useEffect(function(){
-     fetch(ENQUIRIES_URL)
+     fetch(ENQUIRIES_URLL)
        .then(function(response){
          return response.json();
        })

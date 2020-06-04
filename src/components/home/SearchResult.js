@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import {BASE_URL} from './../constants/api.js';
+import {BASE_URLL} from './../constants/api.js';
 import {Link} from 'react-router-dom';
 
 
@@ -35,7 +35,7 @@ export default function SearchResult(){
 
 
    useEffect(function(){
-     fetch(BASE_URL)
+     fetch(BASE_URLL)
        .then(function(response){
          return response.json();
        })
