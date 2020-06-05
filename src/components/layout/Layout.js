@@ -25,7 +25,7 @@ export default function Layout() {
       <div className="header--container">
        <header className="main--header">
          <Link to="/" className="logo">
-           <img src="./images/logo-01.png" alt="logo" />
+           <img src="https://res.cloudinary.com/dyic445sm/image/upload/v1591387692/Holidaze/logo-01_l8lrip.png" alt="logo" />
          </Link>
          <nav className="main--menu">
            <NavLink className="main--menu__link" to="/"> Home </NavLink>
