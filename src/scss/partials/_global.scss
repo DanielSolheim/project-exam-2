@@ -11,10 +11,21 @@ html {
 }
 
 body {
-  margin: 0 0 100px;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
   background-color: $color-background;
+}
+
+@media only screen and (max-width: 800px){
+  body{
+      margin: 0 0 200px;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  body{
+    margin: 0 0 100px;
+  }
 }
 
 footer {
