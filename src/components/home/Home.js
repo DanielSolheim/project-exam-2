@@ -63,11 +63,12 @@ export default function Home (){
        })
    },[])
 
-
+   //reset search everytime you go to homepage
+   localStorage.clear();
 
   // save search to local storage
-   const [value, setValue] = React.useState(
-      localStorage.getItem('myValueInLocalStorage') || ''
+   const [value, setValue] = useState(
+      localStorage.getItem('myValueInLocalStorage')
     );
 
     useEffect(() => {
@@ -78,7 +79,9 @@ export default function Home (){
     const onChange = event => setValue(event.target.value);
 
 
-
+    var curr = new Date();
+ curr.setDate(curr.getDate() + 3);
+ var date = curr.toISOString().substr(0,10);
 
 
   return (
@@ -86,38 +89,39 @@ export default function Home (){
       <div className="home--content center-container">
 
          <section className="home--form">
-               <h1 className="home--heading"> Search for places to stay in Bergen </h1>
+              <h1 className="home--heading"> Search for places to stay in Bergen </h1>
 
-               <form className="home--form__section">
+              <form className="home--form__section">
                  <div  onKeyDown={onClick}  value={value} onChange={onChange} className="home--form__item home--form__item__search">
-                   <Search handleSearch={filterEstablishments}/>
+                 
+                      <Search handleSearch={filterEstablishments}/>
 
-                   <div className="dropdown--container__outer ">
-                     {filteredEstablishments.map(function(establishment){
-                        return (
-                            <div  key={establishment.id} className="dropdown--container__inner">
-                              { showResults ? <DropDown establishment={establishment} /> : null }
-                            </div>
-                        )
-                     })}
-                   </div>
+                      <div className="dropdown--container__outer ">
+                        {filteredEstablishments.map(function(establishment){
+                           return (
+                               <div  key={establishment.id} className="dropdown--container__inner">
+                                 { showResults ? <DropDown establishment={establishment} /> : null }
+                               </div>
+                           )
+                        })}
+                      </div>
                  </div>
 
                  <div className="home--form__item home--form__item__checkinn">
-                  <input type="date"  placeholder="checkinn" name="check-out" />
-
+                    <input type="date"  defaultValue={date} name="check-out" />
                  </div>
+
                  <div className="home--form__item home--form__item__checkout">
-                  <input type="date"  placeholder="checkout" name="check-inn" />
+                  <input type="date"  name="check-inn" />
                  </div>
 
-                   <Link to="/establishments" className="home--form__item home--form__item__submit">
-                      <input  type="submit"  name="submit" value="Search"/>
-                   </Link>
+                 <Link to="/establishments" className="home--form__item home--form__item__submit">
+                   <input  type="submit"  name="submit" value="Search"/>
+                 </Link>
 
 
 
-               </form>
+              </form>
           </section>
       </div>
 

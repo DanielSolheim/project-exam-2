@@ -4,6 +4,10 @@
   width: 100%;
 }
 
+.home--form__item__submit input:hover{
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 800px){
   .Home{
     background-image: url("./../images/bryggen-optimize-mobile.jpg");

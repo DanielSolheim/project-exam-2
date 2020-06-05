@@ -6,30 +6,39 @@ import {Link} from 'react-router-dom';
 
 export default function SearchResult(){
 
-   const [searchedEstablishments, setSearchedEstablishments] = useState([]);
-   const [searchFromLocal, setSearchFromLocal] = useState([]);
+   const [searchedEstablishments, setSearchedEstablishments] = useState({
+     establishmentData: [],
+   });
+
+   const searchValue = localStorage.getItem('myValueInLocalStorage');
+
+
+   const [searchFromLocal, setSearchFromLocal] = useState([searchValue])
+   console.log(searchFromLocal);
+
+
 
 
    //search Function and Save the contents to local storage
-   var filterSearched = function(){
-     const searchValue = localStorage.getItem('myValueInLocalStorage').toLowerCase();
+   var filterSearch = function(array){
 
-     //filtering establishments
-     const filterSearch = searchedEstablishments.filter(function(establishment){
-        const lowerCaseName = establishment.establishmentName.toLowerCase();
+      let filteredSearch = searchedEstablishments.establishmentData;
 
-        //return only when establishment names match
-        if(searchValue === ""){
-          return true
+       filteredSearch = filteredSearch.filter((i) => {
+       const lowerCaseName = i.establishmentName.toLowerCase();
+       if(searchValue == null){
+         return true;
+       }
+       else if(lowerCaseName.match(searchFromLocal)){
+          return true;
         }
-        else if (lowerCaseName.match(searchValue)){
-          return true
-        }
-        return false
-     });
-     setSearchFromLocal(filterSearch);
+        return false;
+      });
+
+      return filteredSearch;
 
    }
+
 
 
 
@@ -40,7 +49,7 @@ export default function SearchResult(){
          return response.json();
        })
        .then(function(json){
-         setSearchedEstablishments(json)
+         setSearchedEstablishments({establishmentData: json})
        })
        .catch(function(error){
          console.log(error)
@@ -51,43 +60,71 @@ export default function SearchResult(){
 
 
 
-   var myLocal = localStorage.getItem('myValueInLocalStorage');
-   console.log(myLocal);
 
 
 
   return (
     <div>
-    <h3 className="searchresult--header" > Places in bergen that matched with {myLocal} </h3>
+    <h3 className="searchresult--header" > Places in Bergen that matched with {searchFromLocal} </h3>
+
     <div className="result--container">
-         {searchedEstablishments.map(function(establishment){
-             const {id, establishmentName, price, maxGuests, imageUrl} = establishment;
-
-          return (
-              <div className="result" key={id}>
-                  <p className="result--name"> {establishmentName} </p>
-                  <div className="result--image" style={{backgroundImage: `url(${imageUrl})`}}>
-
+      {
+        filterSearch(searchedEstablishments.establishmentData).map( i =>
+          <div className="result" key={i.id}>
+              <p className="result--name"> {i.establishmentName} </p>
+              <div className="result--image" style={{backgroundImage: `url(${i.imageUrl})`}}>  </div>
+              <div className="result--bottomBar">
+                  <div className="bottomBar--price">
+                      <p>{i.price + "$"} </p>
                   </div>
-
-
-                  <div className="result--bottomBar">
-                      <div className="bottomBar--price">
-                          <p>{price + "$"} </p>
-                      </div>
-
-                      <div className="bottomBar--persons">
-                        <p>{maxGuests}</p>
-                      </div>
-
-                      <Link to={"establishment/" + id} className="bottomBar--link">
-                        <button className="bottomBar--link__button  main--button" type="submit" > Checkout </button>
-                      </Link>
+                  <div className="bottomBar--persons">
+                    <p>{i.maxGuests}</p>
                   </div>
+                  <Link to={"establishment/" + i.id} className="bottomBar--link">
+                    <button className="bottomBar--link__button  main--button" type="submit" > See More! </button>
+                  </Link>
               </div>
-          )
-         })}
+          </div>
+       )
+     }
+
+
+
     </div>
   </div>
   )
 }
+
+
+/*{searchedEstablishments.map(function(establishment){
+
+    const {id, establishmentName, price, maxGuests, imageUrl} = establishment;
+
+ return (
+     <div className="result" key={id}>
+         <p className="result--name"> {establishmentName} </p>
+         <div className="result--image" style={{backgroundImage: `url(${imageUrl})`}}>
+
+         </div>
+
+
+         <div className="result--bottomBar">
+             <div className="bottomBar--price">
+                 <p>{price + "$"} </p>
+             </div>
+
+             <div className="bottomBar--persons">
+               <p>{maxGuests}</p>
+             </div>
+
+             <Link to={"establishment/" + id} className="bottomBar--link">
+               <button className="bottomBar--link__button  main--button" type="submit" > Checkout </button>
+             </Link>
+         </div>
+     </div>
+ )
+})}*/
+
+
+
+/*  <div className="result--image" style={{i.backgroundImage: `url(${imageUrl})`}}>  </div> */

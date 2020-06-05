@@ -1,6 +1,7 @@
 import React from 'react';
 import {ENQUIRIES_URLL} from './../constants/api';
 import {useState, useEffect} from 'react';
+import newId from './../constants/newId';
 
 export default function Enqueries(){
 
@@ -21,11 +22,12 @@ export default function Enqueries(){
    },[])
 
 
+
   return(
     <div className="Enqueries">
     {enquiries.map(function(enquiry){
      return (
-         <div className="enquiry">
+         <div key={newId()} className="enquiry">
            <p className="enquiry--name"> {enquiry.clientName} </p>
          </div>
      )

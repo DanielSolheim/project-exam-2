@@ -13,6 +13,7 @@ import Home from "./../home/Home.js";
 import Contact from "./../contact/Contact.js";
 import SearchResult from './../home/SearchResult';
 import HotelSpecific from './../home/HotelSpecific';
+import EnquirySuccess from './../home/EnquirySuccess'; 
 
 
 export default function Layout() {
@@ -39,6 +40,7 @@ export default function Layout() {
              <Route path="/admin" component={Admin} />
              <Route path="/establishments" component={SearchResult} />
              <Route path="/establishment/:id" component={HotelSpecific} />
+             <Route path="/booking-confirmed" component={EnquirySuccess} />
        </Switch>
       </div>
       <footer>

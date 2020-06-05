@@ -4,20 +4,22 @@
   width: 100%;
   background-color: $color-background;
   height: auto;
+
 }
 
 .main--header {
   display: grid;
   background-color: inherit;
+    border-bottom: 1px solid $color-pink;
   .main--menu{
-    border: 1px solid blue;
     display: grid;
     a{
       color: white;
       text-decoration: none;
       margin: auto;
       &:hover{
-        background-color: red;
+        background-color: $color-pink;
+        color: black;
       }
     }
   }
