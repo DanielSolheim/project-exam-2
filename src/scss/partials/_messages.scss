@@ -3,7 +3,7 @@
 .message{
   display: grid;
   grid-template-colums: 1fr 1fr;
-  grid-template-rows: 40px 1fr;
+  grid-template-rows: 60px 1fr;
    margin-top: 10px;
    border-bottom: 1px solid $color-pink;
   &--name{
