@@ -8,7 +8,7 @@ export default function AdminLogin(){
 
       <form  className="login">
           <div className="login--item login--item__username">
-            <label> Username: </label>
+            <label> Usernames: </label>
             <input  type="text" name="username"    id="username"></input>
           </div>
 
