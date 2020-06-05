@@ -5,7 +5,7 @@
     height: 30px;
     color: black;
     background-color: white;
-    border: 2px solid $color-purple;
+    border-bottom: 2px solid $color-pink;
     p{
       margin: 0;
       padding: 0;
@@ -15,18 +15,30 @@
     input{
       color: black;
     }
-
-
-
   }
   input{
     width: 100%;
-    border: 2px solid $color-purple;
+    border: none;
+    border-bottom: 2px solid $color-pink;
     padding: 5px;
     &:focus{
-      border: 4px solid $color-pink;
+      border-bottom: 4px solid $color-pink;
     }
 
+  }
+}
+
+.establishment--item{
+  margin-top: 10px;
+  &__submit{
+    width: 100%;
+    height: 40px;
+    &:hover{
+      cursor: pointer;
+      background-color: black;
+      color: $color-pink;
+      border: none;
+    }
   }
 }
 
@@ -35,6 +47,11 @@
   .new--establishment{
     width: $main-width-mobile;
     margin-left: $main-margin-mobile;
+    margin-bottom: 200px;
+  }
+
+  .establishment--item{
+    margin-top: 10px;
   }
 
 

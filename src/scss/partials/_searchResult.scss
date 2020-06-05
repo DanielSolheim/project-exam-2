@@ -54,7 +54,7 @@
   .result{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows:  40px 400px 40px;
+    grid-template-rows:  40px 300px 40px;
     margin-top: 10px;
       border: 1px solid white;
     &--name{
@@ -135,7 +135,7 @@
     &--bottomBar{
       grid-column: 2/3;
       grid-row: 3/5;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 30px auto;
       grid-template-rows: 30px 30px;
 
    }
@@ -152,6 +152,7 @@
       grid-column: 2/3;
       grid-row: 1/2;
       margin-top: -16px;
+      text-align: center;
     }
     &--link{
       grid-column: 1/3;
@@ -200,7 +201,7 @@
     &--bottomBar{
       grid-column: 2/3;
       grid-row: 3/5;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 30px auto;
       grid-template-rows: 30px 30px;
 
    }
@@ -217,6 +218,7 @@
       grid-column: 2/3;
       grid-row: 1/2;
       margin-top: -16px;
+      text-align: center;
     }
     &--link{
       grid-column: 1/3;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {ENQUIRIES_URLL} from './../constants/api';
+import {ENQUIRIES_URL} from './../constants/api';
 import {useState, useEffect} from 'react';
 import newId from './../constants/newId';
 
@@ -9,7 +9,7 @@ export default function Enqueries(){
 
   //fetching the api
    useEffect(function(){
-     fetch(ENQUIRIES_URLL)
+     fetch(ENQUIRIES_URL)
        .then(function(response){
          return response.json();
        })
@@ -28,7 +28,14 @@ export default function Enqueries(){
     {enquiries.map(function(enquiry){
      return (
          <div key={newId()} className="enquiry">
-           <p className="enquiry--name"> {enquiry.clientName} </p>
+            <h3 className="enquiry--establishment"> {enquiry.establishment} </h3>
+            <h4 className="enquiry--name"> {enquiry.clientName} </h4>
+            <p className="enquiry--email">{ "Email: " + enquiry.email}</p>
+            <p className="enquiry-checkin"> {"From: " + enquiry.checkin}  </p>
+            <p className="enquiry--checkout">{"To: " + enquiry.checkout} </p>
+            <p className="enquiry--children"> {"Children: " + enquiry.children} </p>
+            <p className="enquiry--adults"> {"Adults: " + enquiry.adults} </p>
+            <p className="enquiry--notes"> {"Notes: " + enquiry.notes} </p>
          </div>
      )
     })}

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { BASE_URLL } from './../constants/api.js';
+import { BASE_URL } from './../constants/api.js';
 
 
 export default function HotelSpecific(){
@@ -18,7 +18,7 @@ export default function HotelSpecific(){
 
   useEffect (
     function(){
-      fetch(BASE_URLL)
+      fetch(BASE_URL)
         .then(response => response.json())
         .then(responseJSON => {
           // logic for what to do with response
@@ -47,7 +47,7 @@ export default function HotelSpecific(){
         </div>
         <div className="hotelInfo--stats">
            <p className="hotelInfo--stats__price">{ "$" + detail.establishment.price} </p>
-           <p className="hotelInfo--stats__mexGuests">{"MaxGuests: " + detail.establishment.maxGuests} </p>
+           <p className="hotelInfo--stats__maxGuests">{"MaxGuests: " + detail.establishment.maxGuests} </p>
            <p className="hotelInfo--stats__selfCatering">
 
            {(() => {

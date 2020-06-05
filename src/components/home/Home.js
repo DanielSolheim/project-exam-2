@@ -1,6 +1,6 @@
 import React from "react";
 import {useState, useEffect} from 'react';
-import {BASE_URLL} from './../constants/api.js';
+import {BASE_URL} from './../constants/api.js';
 import Search from './Search';
 import DropDown from './DropDown';
 import { Link } from 'react-router-dom';
@@ -50,7 +50,7 @@ export default function Home (){
 
   //fetching the api
    useEffect(function(){
-     fetch(BASE_URLL)
+     fetch(BASE_URL)
        .then(function(response){
          return response.json();
        })
@@ -80,8 +80,8 @@ export default function Home (){
 
 
     var curr = new Date();
- curr.setDate(curr.getDate() + 3);
- var date = curr.toISOString().substr(0,10);
+    curr.setDate(curr.getDate() + 3);
+    var date = curr.toISOString().substr(0,10);
 
 
   return (
@@ -93,7 +93,7 @@ export default function Home (){
 
               <form className="home--form__section">
                  <div  onKeyDown={onClick}  value={value} onChange={onChange} className="home--form__item home--form__item__search">
-                 
+
                       <Search handleSearch={filterEstablishments}/>
 
                       <div className="dropdown--container__outer ">

@@ -1,0 +1,164 @@
+.Enqueries{
+  display: grid;
+  color: black;
+}
+
+
+.enquiry {
+  display: grid;
+  background-color: white;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 800px){
+  .Enqueries{
+    grid-template-columns: 1fr;
+    margin-left: $main-margin-mobile;
+    width: $main-width-mobile;
+  }
+
+  .enquiry {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    margin-top: 10px;
+    padding: 10px;
+    &--establishment{
+      grid-row: 1/2;
+      border-bottom: 1px solid $color-pink;
+    }
+    &--name{
+      grid-row: 2/3;
+    }
+    &--email{
+      grid-row: 3/4;
+      border-bottom: 1px solid $color-pink;
+    }
+    &--checkin{
+      grid-row: 4/5;
+    }
+    &--checkout{
+      grid-row: 5/6;
+      border-bottom: 1px solid $color-pink;
+    }
+    &--children{
+      grid-row: 6/7;
+    }
+    &--adults{
+      grid-row: 7/8;
+      border-bottom: 1px solid $color-pink;
+    }
+    &--notes {
+      grid-row: 8/9;
+    }
+
+
+  }
+}
+
+
+@media only screen and (min-width: 800px) and (max-width: 1100px){
+  .Enqueries{
+    grid-template-columns: 1fr;
+    margin-left: $main-margin-pad;
+    width: $main-width-pad;
+  }
+
+  .enquiry {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    margin-top: 10px;
+    padding: 10px;
+    &--establishment{
+      grid-column: 1/3;
+      grid-row: 1/2;
+      border-bottom: 1px solid $color-pink;
+    }
+    &--name{
+      grid-column: 1/2;
+      grid-row: 2/3;
+
+    }
+    &--email{
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+    &--checkin{
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+    &--checkout{
+      grid-column: 2/3;
+      grid-row: 3/4;
+    }
+    &--children{
+      grid-column: 1/2;
+      grid-row: 4/5;
+    }
+    &--adults{
+      grid-column: 2/3;
+      grid-row: 4/5;
+    }
+    &--notes {
+      grid-column: 1/3;
+      grid-row: 5/6;
+    }
+
+
+  }
+}
+
+@media only screen and (min-width: 1100px){
+   .Enqueries{
+     grid-template-columns: 1fr;
+     margin-left: $main-margin;
+     width: $main-width;
+   }
+
+   .enquiry {
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: auto auto auto auto auto;
+     margin-top: 10px;
+     padding: 10px;
+     &--establishment{
+       grid-column: 1/3;
+       grid-row: 1/2;
+       border-bottom: 1px solid $color-pink;
+     }
+     &--name{
+       grid-column: 1/2;
+       grid-row: 2/3;
+
+     }
+     &--email{
+       grid-column: 2/3;
+       grid-row: 2/3;
+     }
+     &--checkin{
+       grid-column: 1/2;
+       grid-row: 3/4;
+     }
+     &--checkout{
+       grid-column: 2/3;
+       grid-row: 3/4;
+     }
+     &--children{
+       grid-column: 1/2;
+       grid-row: 4/5;
+     }
+     &--adults{
+       grid-column: 2/3;
+       grid-row: 4/5;
+     }
+     &--notes {
+       grid-column: 1/3;
+       grid-row: 5/6;
+     }
+
+
+   }
+}

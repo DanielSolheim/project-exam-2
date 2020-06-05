@@ -15,12 +15,16 @@ export default function EnquirySuccess(){
 
   return(
     <div className="EnquirySuccess">
-       <div> Thanks for your booking </div>
-       <div> Green image </div>
-       <p> Your reservation code is <span> {s4()} </span>  </p>
-       <Link to="/" >
-           Go back to homepage
-       </Link>
+       <div className="successWrapper">
+          <div className="successWrapper--icon"> </div>
+          <div className="successWrapper--message"> You added a new Establishment</div>
+          <p className="successWrapper--code"> Your reservation code is: <span> {s4()} </span>  </p>
+          <div className="successWrapper--link">
+              <Link  to="/" >
+                  Go back to homepage
+              </Link>
+           </div>
+        </div>
     </div>
   )
 }

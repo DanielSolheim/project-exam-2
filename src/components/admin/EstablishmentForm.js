@@ -1,9 +1,17 @@
 import React from 'react';
 
 export default function EstablishmentForm(){
+
+
+  let s5 = () => {
+    return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+  }
+
   return (
     <div className="EstablishmentForm">
-       <form className="new--establishment" action="http://localhost/hotel-api/add-establishments-success.php">
+       <form className="new--establishment" method="POST" action="http://localhost/hotel-api/add-establishments-success.php">
 
          <div className="establishment--item establishment--item__name">
             <input placeholder="Establishment Name......" type="text" name="establishmentName" id="establishmentName"></input>
@@ -38,7 +46,7 @@ export default function EstablishmentForm(){
           </div>
 
           <div className="establishment--item establishment--item__id">
-            <input placeholder="Id......" type="text" name="id" id="id"></input>
+            <input placeholder="Id......" defaultValue={s5()} type="text" name="id" id="id"></input>
           </div>
 
           <div className="establishment--item establishment--item__selfCatering">
@@ -48,7 +56,7 @@ export default function EstablishmentForm(){
             <input type="radio" id="true" name="selfCatering" value="true" />
 
             <label for="false">False</label>
-            <input type="radio" id="false" name="selfCatering" value="false" />
+            <input type="radio"    id="false" name="selfCatering" value="false" />
           </div>
 
            <input type="submit"  className="establishment--item establishment--item__submit" />

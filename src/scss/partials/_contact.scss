@@ -1,11 +1,15 @@
 .form{
   color: white;
+  &--item{
+    margin-top: 20px;
+  }
    &--item input{
      height: 30px;
    }
    &--item input, &--item textarea{
     width: 100%;
-    border: 2px solid $color-purple;
+    border: none;
+    border-bottom: 2px solid $color-pink;
     &:focus{
       border: 4px solid $color-pink;
     }

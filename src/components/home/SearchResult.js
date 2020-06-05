@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import {BASE_URLL} from './../constants/api.js';
+import {BASE_URL} from './../constants/api.js';
 import {Link} from 'react-router-dom';
 
 
@@ -44,7 +44,7 @@ export default function SearchResult(){
 
 
    useEffect(function(){
-     fetch(BASE_URLL)
+     fetch(BASE_URL)
        .then(function(response){
          return response.json();
        })
@@ -78,7 +78,7 @@ export default function SearchResult(){
                       <p>{i.price + "$"} </p>
                   </div>
                   <div className="bottomBar--persons">
-                    <p>{i.maxGuests}</p>
+                    <p>{"MaxGuests: " + i.maxGuests}</p>
                   </div>
                   <Link to={"establishment/" + i.id} className="bottomBar--link">
                     <button className="bottomBar--link__button  main--button" type="submit" > See More! </button>
@@ -94,37 +94,3 @@ export default function SearchResult(){
   </div>
   )
 }
-
-
-/*{searchedEstablishments.map(function(establishment){
-
-    const {id, establishmentName, price, maxGuests, imageUrl} = establishment;
-
- return (
-     <div className="result" key={id}>
-         <p className="result--name"> {establishmentName} </p>
-         <div className="result--image" style={{backgroundImage: `url(${imageUrl})`}}>
-
-         </div>
-
-
-         <div className="result--bottomBar">
-             <div className="bottomBar--price">
-                 <p>{price + "$"} </p>
-             </div>
-
-             <div className="bottomBar--persons">
-               <p>{maxGuests}</p>
-             </div>
-
-             <Link to={"establishment/" + id} className="bottomBar--link">
-               <button className="bottomBar--link__button  main--button" type="submit" > Checkout </button>
-             </Link>
-         </div>
-     </div>
- )
-})}*/
-
-
-
-/*  <div className="result--image" style={{i.backgroundImage: `url(${imageUrl})`}}>  </div> */

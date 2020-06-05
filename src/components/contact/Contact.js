@@ -17,7 +17,7 @@ export default function Contact(){
      <form className="form" method="POST" action="http://localhost/hotel-api/contact-success.php"    >
 
         <div className="form--item form--item__name">
-          <label htmlFor="clientName">Full name</label>
+          <label htmlFor="clientName">Name</label>
           <input type="text" name="clientName"    id="clientName" ></input>
 
         </div>
