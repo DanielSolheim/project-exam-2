@@ -4,8 +4,6 @@ import {Link} from 'react-router-dom';
 
 export default function ContactSuccess(){
 
-
-
   return(
     <div className="ContactSuccess">
      <div className="successWrapper">

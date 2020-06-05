@@ -2,11 +2,14 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 export default function AdminLogin(){
+  /*No password or username for login, Just click the login Button*/
+
   return (
     <div className="AdminLogin">
 
 
       <form  className="login">
+
           <div className="login--item login--item__username">
             <label> Usernames: </label>
             <input  type="text" name="username"    id="username"></input>

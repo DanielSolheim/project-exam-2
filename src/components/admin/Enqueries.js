@@ -5,9 +5,10 @@ import newId from './../constants/newId';
 
 export default function Enqueries(){
 
+  //setting states for enquiries
   const [enquiries, setEnquiries] = useState([]);
 
-  //fetching the api
+  //fetching the enquiry api
    useEffect(function(){
      fetch(ENQUIRIES_URL)
        .then(function(response){

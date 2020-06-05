@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function EstablishmentForm(){
 
-
+  //making a random id for each establishment and adding it to the form
   let s5 = () => {
     return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
@@ -59,7 +59,7 @@ export default function EstablishmentForm(){
             <input type="radio"    id="false" name="selfCatering" value="false" />
           </div>
 
-           <input type="submit"  className="establishment--item establishment--item__submit" />
+          <input type="submit"  className="establishment--item establishment--item__submit" />
        </form>
     </div>
   );

@@ -6,7 +6,6 @@ export default function Message(){
 
 const [messages, setMessages] = useState([]);
 
-
   //fetching the api
    useEffect(function(){
      fetch(CONTACT_URL)

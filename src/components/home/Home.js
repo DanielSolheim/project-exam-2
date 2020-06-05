@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 export default function Home (){
 
 
-  //settting states for data
+  //settting states for establishments
   const [establishments, setEstablishments] = useState([]);
   const [filteredEstablishments, setFilteredEstablishments] = useState([]);
 
@@ -25,7 +25,7 @@ export default function Home (){
 
 
 
-     //search Function and Save the contents to local storage
+     //search Function
      var filterEstablishments = function(e){
        const searchValue = e.target.value.toLowerCase();
 
@@ -33,7 +33,7 @@ export default function Home (){
        const filteredArray = establishments.filter(function(establishment){
           const lowerCaseName = establishment.establishmentName.toLowerCase();
 
-          //return only when establishment names match
+          //return only when establishment names that match
           if(e.target.value === ""){
             return false
           }
@@ -63,22 +63,26 @@ export default function Home (){
        })
    },[])
 
+
    //reset search everytime you go to homepage
    localStorage.clear();
 
-  // save search to local storage
+  //save search value to local storage
    const [value, setValue] = useState(
       localStorage.getItem('myValueInLocalStorage')
     );
 
+    //setting the localstorage item
     useEffect(() => {
       localStorage.clear();
       localStorage.setItem('myValueInLocalStorage', value);
     },[value]);
 
+
+    //setting value of local storage
     const onChange = event => setValue(event.target.value);
 
-
+    //Default date for from date. Todays date
     var curr = new Date();
     curr.setDate(curr.getDate() + 3);
     var date = curr.toISOString().substr(0,10);
@@ -93,16 +97,14 @@ export default function Home (){
 
               <form className="home--form__section">
                  <div  onKeyDown={onClick}  value={value} onChange={onChange} className="home--form__item home--form__item__search">
-
                       <Search handleSearch={filterEstablishments}/>
-
                       <div className="dropdown--container__outer ">
                         {filteredEstablishments.map(function(establishment){
                            return (
                                <div  key={establishment.id} className="dropdown--container__inner">
                                  { showResults ? <DropDown establishment={establishment} /> : null }
                                </div>
-                           )
+                            )
                         })}
                       </div>
                  </div>
@@ -119,14 +121,9 @@ export default function Home (){
                    <input  type="submit"  name="submit" value="Search"/>
                  </Link>
 
-
-
               </form>
           </section>
       </div>
-
-
-
     </div>
   );
 };

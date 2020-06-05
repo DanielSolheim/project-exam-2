@@ -6,20 +6,22 @@ import {Link} from 'react-router-dom';
 
 export default function SearchResult(){
 
+   //settig stated for the elements that i searched
    const [searchedEstablishments, setSearchedEstablishments] = useState({
      establishmentData: [],
    });
 
+   //saving localstorage
    const searchValue = localStorage.getItem('myValueInLocalStorage');
 
-
+   // passing localstorage value to the localStorage state.
    const [searchFromLocal, setSearchFromLocal] = useState([searchValue])
    console.log(searchFromLocal);
 
 
 
 
-   //search Function and Save the contents to local storage
+   //Onload search for displaying the right establishments
    var filterSearch = function(array){
 
       let filteredSearch = searchedEstablishments.establishmentData;
@@ -34,15 +36,10 @@ export default function SearchResult(){
         }
         return false;
       });
-
       return filteredSearch;
-
    }
 
-
-
-
-
+  //fetching the establishment api
    useEffect(function(){
      fetch(BASE_URL)
        .then(function(response){
@@ -55,12 +52,6 @@ export default function SearchResult(){
          console.log(error)
        })
    },[])
-
-
-
-
-
-
 
 
   return (
@@ -85,11 +76,8 @@ export default function SearchResult(){
                   </Link>
               </div>
           </div>
-       )
-     }
-
-
-
+        )
+      }
     </div>
   </div>
   )

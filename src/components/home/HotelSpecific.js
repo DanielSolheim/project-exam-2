@@ -6,11 +6,12 @@ import { BASE_URL } from './../constants/api.js';
 
 export default function HotelSpecific(){
 
+  //setting States for Detail page
   const [detail, setDetail] = useState({
     establishment: []
   });
 
-
+  //getting id param from url
   let {id} = useParams();
 
 
@@ -21,13 +22,12 @@ export default function HotelSpecific(){
       fetch(BASE_URL)
         .then(response => response.json())
         .then(responseJSON => {
-          // logic for what to do with response
+          // Find the index that is equall to id
           let currentArticle = responseJSON.find(i =>
               i.id === id
           );
-
+          //sett staten av objectet til currentarticle
           setDetail({establishment: currentArticle});
-
         })
         .catch (function(err){
           console.log("noe gikk galt", err)
@@ -36,11 +36,8 @@ export default function HotelSpecific(){
   )
 
 
-/*  <input type="text" name="establishment" id="establishment" defaultValue={detail.establishment.establishmentName} /> */
-
   return(
     <div  className="HotelSpecific">
-
      <div className="hotelInfo">
         <h3 className="hotelInfo--name"> {detail.establishment.establishmentName} </h3>
         <div className="hotelInfo--image" style={{backgroundImage: `url(${detail.establishment.imageUrl})`}}>
@@ -82,11 +79,6 @@ export default function HotelSpecific(){
            </form>
 
      </div>
-
-
-
-
-
     </div>
   );
 };
