@@ -11,7 +11,7 @@ export default function EstablishmentForm(){
 
   return (
     <div className="EstablishmentForm">
-       <form className="new--establishment" method="POST" action="http://localhost/hotel-api/add-establishments-success.php">
+       <form className="new--establishment" method="POST" action="https://www.dansol.no/hotel-api/add-establishments-success.php">
 
          <div className="establishment--item establishment--item__name">
             <input placeholder="Establishment Name......" type="text" name="establishmentName" id="establishmentName"></input>

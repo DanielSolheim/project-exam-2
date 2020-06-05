@@ -14,7 +14,7 @@ export default function Contact(){
 
   return (
     <div className="Contact">
-     <form className="form" method="POST" action="http://localhost/hotel-api/contact-success.php"    >
+     <form className="form" method="POST" action="https://www.dansol.no/hotel-api/contact-success.php"    >
 
         <div className="form--item form--item__name">
           <label htmlFor="clientName">Name</label>

@@ -65,7 +65,7 @@ export default function HotelSpecific(){
 
 
 
-          <form className="makeEnquiry" method="POST" action="http://localhost/hotel-api/enquiry-success.php">
+          <form className="makeEnquiry" method="POST" action="https://www.dansol.no/hotel-api/enquiry-success.php">
               <h3 className="makeEnquiry--header"> Book a stay at {detail.establishment.establishmentName} now! </h3>
               <input className="makeEnquiry--establishment" type="text" name="establishment" id="establishment" defaultValue={detail.establishment.establishmentName} />
               <input className="makeEnquiry--name" type="text" placeholder="Full Name" name="clientName" id="clientName" />
