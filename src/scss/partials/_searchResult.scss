@@ -40,6 +40,10 @@
 
 @media only screen and (max-width: 800px){
 
+  .result--container{
+    margin-bottom: 200px;
+  }
+
   .searchresult--header{
     color: white;
     margin-left: $main-margin-mobile;

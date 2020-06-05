@@ -12,6 +12,9 @@
 
 
 @media only screen and (max-width: 800px){
+  .HotelSpecific{
+    margin-bottom: 200px;
+  }
   .hotelInfo{
       display: grid;
       grid-template:
@@ -33,7 +36,7 @@
     &--stats {
       display: grid;
       grid-area: stats;
-      text-align: center;
+      margin-left: 5%; 
       &__price{
         grid-column: 1/2;
         grid-row: 1/2;
